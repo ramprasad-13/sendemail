@@ -74,3 +74,5 @@ app.post("/sendemail",(req,res)=>{
 app.listen(port,hostname,()=>{
     console.log(`App started listening on port:${port}`)
 })
+
+module.exports = app;
