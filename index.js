@@ -1,5 +1,6 @@
 const express = require('express')
 const nodemailer = require('nodemailer')
+const cors = require('cors')
 require('dotenv').config()
 const hostname= '0.0.0.0'
 const port = process.env.PORT || 3000;
@@ -9,6 +10,15 @@ const app = express()
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json())
+
+var corsOptions = {
+    origin: 'https://abroad.vercel.app',
+    methods: ['GET', 'POST','PATCH','DELETE'], // Specify your origin here
+    credentials: true,  // This allows the session cookie to be sent back and forth
+    //optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+
+app.use(cors(corsOptions)); // allow any origin
 
 
 app.get("/",(req,res)=>{
