@@ -60,7 +60,7 @@ app.post("/sendemail",(req,res)=>{
     })
     const mailOptions = {
         from:process.env.APP_USER,
-        to:'198a1a05c1ram@gmail.com',
+        to:'shreevijayhosiery@gmail.com',
         subject:`Mail from ${name}`,
         html:htmlContent
     }
